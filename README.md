@@ -12,3 +12,11 @@ npm install -g nodemon
 npm install --save lodash
 npm install --save body-parser
 ```
+
+### 3. Adding Endpoints to the Server
+```
+npm install --save lodash
+npm install --save body-parser
+```
+
+### 4. Adding Mongo to the App
