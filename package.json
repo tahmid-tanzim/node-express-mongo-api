@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tahmid-tanzim/Node-Web-API#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.4",
     "body-parser": "^1.15.1",
     "express": "~4.13.4",
     "lodash": "^4.11.2",
