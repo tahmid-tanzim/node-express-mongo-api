@@ -3,6 +3,8 @@ var r = require('request').defaults({
 });
 
 var async = require('async');
+var redis = require('redis');
+var client = redis.createClient(6379, '127.0.0.1');
 
 module.exports = function (app) {
     /* Read */
@@ -22,15 +24,29 @@ module.exports = function (app) {
                     });
                 },
                 dog: function (callback) {
-                    r({uri: 'http://localhost:3001/dog'}, function (error, response, body) {
+                    client.get('http://localhost:3001/dog', function (error, dog) {
                         if (error) {
-                            callback({service: 'dog', error: error});
-                            return;
+                            throw error;
                         }
-                        if (!error && response.statusCode === 200) {
-                            callback(null, body.data);
+                        if (dog) {
+                            callback(null, JSON.parse(dog));
                         } else {
-                            callback(response.statusCode);
+                            r({uri: 'http://localhost:3001/dog'}, function (error, response, body) {
+                                if (error) {
+                                    callback({service: 'dog', error: error});
+                                    return;
+                                }
+                                if (!error && response.statusCode === 200) {
+                                    callback(null, body.data);
+                                    client.setex('http://localhost:3001/dog', 1000, JSON.stringify(body.data), function (error) {
+                                        if (error) {
+                                            throw error;
+                                        }
+                                    });
+                                } else {
+                                    callback(response.statusCode);
+                                }
+                            });
                         }
                     });
                 }

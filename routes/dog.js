@@ -20,7 +20,9 @@ module.exports = function (app) {
             if (err) {
                 res.json({info: 'Error during find dogs', error: err});
             }
-            res.json({info: 'Dog found successfully', data: dogs});
+            setTimeout(function() {
+                res.json({info: 'Dog found successfully', data: dogs});
+            }, 10000);
         });
     });
 
