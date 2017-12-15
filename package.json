@@ -1,29 +1,20 @@
 {
-  "name": "Node-Web-API",
+  "name": "express-mongo-restful-api",
   "version": "1.0.0",
-  "description": "Building a Node Web API with ExpressJS, MongoDB",
+  "description": "Learn Node Express MongoDB API",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tahmid-tanzim/Node-Web-API.git"
+    "url": "git+https://github.com/tahmid-tanzim/node-express-mongo-api.git"
   },
-  "keywords": [],
-  "author": "Tahmid Tanzim <tahmid.tanzim@gmail.com>",
-  "license": "ISC",
+  "author": "",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tahmid-tanzim/Node-Web-API/issues"
+    "url": "https://github.com/tahmid-tanzim/node-express-mongo-api/issues"
   },
-  "homepage": "https://github.com/tahmid-tanzim/Node-Web-API#readme",
+  "homepage": "https://github.com/tahmid-tanzim/node-express-mongo-api#readme",
   "dependencies": {
-    "async": "^2.0.0-rc.4",
-    "body-parser": "^1.15.1",
-    "express": "~4.13.4",
-    "lodash": "^4.11.2",
-    "mongoose": "^4.4.15",
-    "redis": "^2.6.0-2",
-    "request": "^2.72.0"
+    "mongoose": "^4.13.7"
   }
 }
