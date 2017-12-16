@@ -1,12 +1,18 @@
 const mongoose = require('mongoose');
 
-/* Connection to MongoDB */
-const promise = mongoose.createConnection('mongodb://localhost/NetNinja', {
-    useMongoClient: true
-});
+mongoose.Promise = global.Promise;
 
-promise.then(function() {
-    console.log('Connection Success.');
-}).catch(function (error) {
-    console.log('Connection Error: ', error);
+before(function (done) {
+    /* Connection to MongoDB */
+    const promise = mongoose.connect('mongodb://localhost/NetNinja', {
+        useMongoClient: true
+    });
+
+    promise.then(function() {
+        console.log('Connection Success.');
+        done();
+    }).catch(function (error) {
+        console.log('Connection Error: ', error);
+        done();
+    });
 });

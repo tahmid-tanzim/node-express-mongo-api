@@ -1,4 +1,5 @@
-import {Schema, model} from 'mongoose';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 /* Schema */
 const MarioCharSchema = new Schema({
@@ -8,6 +9,6 @@ const MarioCharSchema = new Schema({
 
 /* Model */
 const collection = 'mariochar';
-const MarioChar = model(collection, MarioCharSchema);
+const MarioChar = mongoose.model(collection, MarioCharSchema);
 
-export default MarioChar;
+module.exports = MarioChar;
