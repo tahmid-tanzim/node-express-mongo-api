@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/tahmid-tanzim/node-express-mongo-api#readme",
   "dependencies": {
-    "mongoose": "^4.13.7"
+    "mongoose": "^5.12.7"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "mocha": "^4.0.1",
+    "mocha": "^8.4.0",
     "rimraf": "^2.6.2"
   }
 }
