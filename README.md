@@ -14,3 +14,8 @@ mongod
 npm install --save mongoose
 ```
 
+### 4. Dev Dependency
+```
+npm install --save-dev babel-cli babel-preset-es2015 mocha rimraf
+```
+
